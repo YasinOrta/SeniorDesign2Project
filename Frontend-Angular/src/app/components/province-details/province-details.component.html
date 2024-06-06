@@ -1,0 +1,42 @@
+<mat-toolbar>
+    <span style="padding-right: 10px;">PATHFINDER</span>
+    <button class="goBackBtn" mat-flat-button color="warn" class="goBtn" (click)="goHome()">Home</button>
+    <button class="goBackBtn" mat-flat-button color="warn" class="goBtn" (click)="topFunc()">Go Up</button>
+</mat-toolbar>
+<div>
+    <div id="top" style="padding-top: 80px;" class="row">
+        <div class="col">
+            <article>
+                <h2 style="padding-left: 10px; padding-top: 10px;">Name of the city: {{province?.name}}</h2>
+                <h2 style="padding-left: 10px; padding-top: 10px;">Plate No: {{province?.vehicle_Registration_Plate}}</h2>
+                <p style="padding-left: 10px; font-weight: bold;">About: {{province?.about}}</p>
+                <p style="padding-left: 10px; font-weight: bold;">Items: {{province?.popularProducedItems}}</p>
+                <p style="padding-left: 10px; font-weight: bold;">Foods: {{province?.popularFoods}}</p>
+                <p style="padding-left: 10px; font-weight: bold;">Region: {{province?.region_Location}}</p>
+            </article>
+        </div>
+        <div class="col">
+            <img class="photo" src="{{province?.imgUrl}}">
+        </div>
+    </div>
+    
+    <div id="bottom-detail" class="row" style="padding-left: 10px;">
+        <h2 style="padding-left: 10px; padding-top: 10px;">Famous Places</h2>
+        <ul *ngFor="let district of sortedDistricts">
+            <li style="padding-bottom: 10px;">
+                <div class="row">
+                    <div class="col">
+                        <img class="photo2" src="{{district.districtImgUrl}}">
+                    </div>
+                    <div class="col">
+                        <h2>{{district.districtName}}</h2>
+                        <span>{{district.districtAbout}}</span>
+                        <p> </p>
+                        <a href="{{district.districtLocation}}">Location Link on GoogleMaps</a>   
+                        <p style="border-style: outset;"></p>
+                    </div>
+                </div>
+            </li>
+        </ul> 
+    </div>
+</div>

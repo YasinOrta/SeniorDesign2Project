@@ -1,0 +1,76 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-haeding">
+                        <h3 class="pt-3 font-weight-bold" style="text-align: center;">City Information Edit Panel</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="updateCityForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['Id'].dirty && updateCityForm.hasError('required','Id')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="Id" type="text" placeholder="Id">
+                                </div>
+                            </div>
+                            <small *ngIf="updateCityForm.controls['Id'].dirty && updateCityForm.hasError('required','Id')" class="text-danger">
+                                *Id is required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['cityId'].dirty && updateCityForm.hasError('required','cityId')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="cityId" type="text" placeholder="City Id/Plate No">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['cityName'].dirty && updateCityForm.hasError('required','cityName')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="cityName" type="text" placeholder="City Name">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['cityLocation'].dirty && updateCityForm.hasError('required','cityLocation')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="cityLocation" type="text" placeholder="City Location">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['districtId'].dirty && updateCityForm.hasError('required','districtId')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="districtId" type="text" placeholder="District Id">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['districtName'].dirty && updateCityForm.hasError('required','districtName')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="districtName" type="text" placeholder="District Name">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['districtAbout'].dirty && updateCityForm.hasError('required','districtAbout')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="districtAbout" type="text" placeholder="District About">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['districtLocation'].dirty && updateCityForm.hasError('required','districtLocation')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="districtLocation" type="text" placeholder="District Location">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateCityForm.controls['districtImgUrl'].dirty && updateCityForm.hasError('required','districtImgUrl')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="districtImgUrl" type="text" placeholder="District ImgUrl">
+                                </div>
+                            </div>
+                            <button (click)="updateCity()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Update City</button>
+                            <button (click)="goBack()" class="btn btn-primary btn-block mt-4 w-100">Close Screen</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

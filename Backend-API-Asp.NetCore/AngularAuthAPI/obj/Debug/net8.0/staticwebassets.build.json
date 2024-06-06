@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "P60pEpoBlc1k5GqqzTNel70gHAeyeTMtjMMiGrgAVb8=",
+  "Source": "AngularAuthAPI",
+  "BasePath": "_content/AngularAuthAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AngularAuthAPI\\wwwroot",
+      "Source": "AngularAuthAPI",
+      "ContentRoot": "X:\\tourguide-angular-asp.netcore\\Backend-API-Asp.NetCore\\AngularAuthAPI\\wwwroot\\",
+      "BasePath": "_content/AngularAuthAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

@@ -1,0 +1,58 @@
+.photo{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    float: right;
+}
+
+.photo2{
+  height: 500px; 
+  width: 520px; 
+  border-radius: 30px;
+}
+
+.col{
+    float: left;
+    width: 50%;
+  }
+
+  .row:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .btnB{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .mat-toolbar{
+    background: black;
+    color: white;
+    position: fixed;
+}
+
+.bottom-detail{
+  .row{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1100px)
+{ 
+  .photo2{
+    width: 100%;
+    height: 200px;
+  }
+  .photo{
+    width: 100%;
+    height: 200px;
+  }
+
+  .bottom-detail{
+    display: block;
+  }
+} 

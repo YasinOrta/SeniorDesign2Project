@@ -1,0 +1,82 @@
+<nav>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <div class="wrapper">
+        <div class="logo"><a href="#" onclick="return false;">Admin Panel</a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fa fa-times"></i></label>
+        <li>
+          <a href="#" onclick="return false;" class="desktop-item">Admin Operations</a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">Admin Operations</label>
+          <ul class="drop-menu">
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="addUser()"><i class="fa-solid fa-plus"></i>User</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="editUser()"><i class="fa-solid fa-pen-to-square"></i>User</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="deleteUser()"><i class="fa-solid fa-trash"></i>User</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="addProvince()"><i class="fa-solid fa-plus"></i>Province</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="editProvince()"><i class="fa-solid fa-pen-to-square"></i>Province</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="deleteProvince()"><i class="fa-solid fa-trash"></i>Province</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="addCity()"><i class="fa-solid fa-plus"></i>City</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="editCity()"><i class="fa-solid fa-pen-to-square"></i>City</button></li>
+            <li><button mat-flat-button class="goBtn" color="accent" (click)="deleteCity()"><i class="fa-solid fa-trash"></i>City</button></li>
+          </ul>
+        </li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fa fa-bars"></i></label>
+    </div>
+  </nav>
+
+<div>
+    <form [formGroup]="searchForm">
+        <input style="font-weight: bold; font-size: 20px; background-color: rgb(255, 255, 255); border-style: double; width: 50%;
+        " type="text" formControlName="search" placeholder="Filter by Province." #searchQuery/>
+        <button mat-flat-button color="accent" class="goBtn" type="button" (click)="onSearchUpdated(searchQuery.value)"><i class="fa fa-search"></i></button>
+        <button mat-flat-button color="warn" class="goBtn" type="button" (click)="clearResult()"><i class="fa-solid fa-xmark"></i></button>
+    </form>
+</div>
+
+<ng-container *ngIf="provinceList.length;">
+    <div class="grid grid-flow-col-4">
+        <ul *ngFor="let province of provinceList" style="padding-top: 10px;">
+            <li style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">
+                {{province.name}}, {{province.id}} 
+            </li>
+        </ul>
+    </div>
+</ng-container>
+
+<section class="result">
+    <div>
+        <h2 style="padding-left: 10px;">Users</h2>
+        <ul *ngFor="let user of users">
+            <li style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">
+                ID: {{user.id}},
+                Username: {{user.username}},
+                Firstname: {{user.firstName}},
+                Lastname: {{user.lastName}},
+                Email: {{user.email}},
+                Role: {{user.role}}
+            </li>
+        </ul>
+        <h2 style="padding-left: 10px;">Provinces</h2>
+        <ul *ngFor="let province of provinces">
+            <li style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">
+                ID: {{province.id}}, Province Name: {{province.name}}
+            </li>
+        </ul>
+        <h2 style="padding-left: 10px;">Cities</h2>
+        <ul *ngFor="let city of cities">
+            <li style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">
+                ID: {{city.id}},
+                City Name: {{city.cityName}},
+                District Name: {{city.districtName}},
+                Plate No: {{city.cityId}},
+                District Id: {{city.districtId}}
+            </li>
+        </ul>
+    </div> 
+</section>
+
+<router-outlet></router-outlet>

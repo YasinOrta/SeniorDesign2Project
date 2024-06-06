@@ -1,0 +1,100 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-haeding">
+                        <h3 class="pt-3 font-weight-bold" style="text-align: center;">Adding New Province</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signUpFormProvince">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['Name'].dirty && signUpFormProvince.hasError('required','Name')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="Name" type="text" placeholder="Province Name">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['Name'].dirty && signUpFormProvince.hasError('required','Name')" class="text-danger">
+                                *Province Name is required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['Vehicle_Registration_Plate'].dirty && signUpFormProvince.hasError('required','Vehicle_Registration_Plate')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="Vehicle_Registration_Plate" type="text" placeholder="Plate No">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['Vehicle_Registration_Plate'].dirty && signUpFormProvince.hasError('required','Vehicle_Registration_Plate')" class="text-danger">
+                                *Plate No is required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['Region_Location'].dirty && signUpFormProvince.hasError('required','Region_Location')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="Region_Location" type="text" placeholder="Region">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['Region_Location'].dirty && signUpFormProvince.hasError('required','Region_Location')" class="text-danger">
+                                *Region is required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['PopularFoods'].dirty && signUpFormProvince.hasError('required','PopularFoods')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="PopularFoods" type="text" placeholder="Popular Foods">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['PopularFoods'].dirty && signUpFormProvince.hasError('required','PopularFoods')" class="text-danger">
+                                *Popular Foods required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['PopularProducedItems'].dirty && signUpFormProvince.hasError('required','PopularProducedItems')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="PopularProducedItems" type="text" placeholder="Popular Produced Items">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['PopularProducedItems'].dirty && signUpFormProvince.hasError('required','PopularProducedItems')" class="text-danger">
+                                *Popular Produced Items required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['Population'].dirty && signUpFormProvince.hasError('required','Population')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="Population" type="text" placeholder="Population Size">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['Population'].dirty && signUpFormProvince.hasError('required','Population')" class="text-danger">
+                                *Population size is required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['IsCapitalCity'].dirty && signUpFormProvince.hasError('required','IsCapitalCity')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="IsCapitalCity" type="text" placeholder="Is this province a capital ?">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['IsCapitalCity'].dirty && signUpFormProvince.hasError('required','IsCapitalCity')" class="text-danger">
+                                *Capital or not (true or false)?
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['imgUrl'].dirty && signUpFormProvince.hasError('required','imgUrl')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="imgUrl" type="text" placeholder="Province ImgUrl">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['imgUrl'].dirty && signUpFormProvince.hasError('required','imgUrl')" class="text-danger">
+                                *Province ImgUrl is required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpFormProvince.controls['About'].dirty && signUpFormProvince.hasError('required','About')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="About" type="text" placeholder="Province About">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpFormProvince.controls['About'].dirty && signUpFormProvince.hasError('required','About')" class="text-danger">
+                                *Province details are required!
+                            </small>
+                            <button (click)="addProvince()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Add Province</button>
+                            <button (click)="goBack()" class="btn btn-primary btn-block mt-4 w-100">Close Screen</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

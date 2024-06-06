@@ -1,0 +1,10 @@
+.mat-toolbar{
+    background: black;
+    color: white;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .mat-toolbar{
+        width: auto;
+    }
+  }

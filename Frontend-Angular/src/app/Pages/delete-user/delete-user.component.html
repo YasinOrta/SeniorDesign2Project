@@ -1,0 +1,28 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-haeding">
+                        <h3 class="pt-3 font-weight-bold" style="text-align: center;">User Deletion Panel</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="deleteForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="deleteForm.controls['Id'].dirty && deleteForm.hasError('required','Id')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="Id" type="text" placeholder="Id">
+                                </div>
+                            </div>
+                            <small *ngIf="deleteForm.controls['Id'].dirty && deleteForm.hasError('required','Id')" class="text-danger">
+                                *Provide a Id!
+                            </small>
+                            <button (click)="onDelete()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Delete User</button>
+                            <button (click)="goBack()" class="btn btn-primary btn-block mt-4 w-100">Return Home</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

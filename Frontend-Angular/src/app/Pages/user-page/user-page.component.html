@@ -1,0 +1,48 @@
+<div style="padding-top: 60px;">
+    <div class="row">
+        <div class="col" style="background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGdrNjQ4cTFiYTE1bDVmdmE0azF4MnRzOHJhcmk3eGNiNGthOHJuayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JSjVUhKot7GfyP5cUZ/giphy.gif); border-radius: 40px; background-repeat: no-repeat; background-size: cover;">
+            <h2 style="padding-left: 20px; padding-top: 10px; font-size: 40px;"> Welcome Traveler... </h2>
+            <li style="padding-left: 20px; padding-top: 10px; font-size: 20px;">Don't know where to go ?</li>
+            <li style="padding-left: 20px; padding-top: 10px; font-size: 20px;">Can't decide where to spend your holiday ?</li>
+            <li style="padding-left: 20px; padding-top: 10px; font-size: 20px;">Let us help you.</li>
+        </div>
+        <div class="col">
+            <div *ngIf="provinceDbListForSwipe.length;" style="padding-top: 10px;">
+            <swiper-container 
+            navigation="true" 
+            pagination="true" 
+            autoplay="true"
+            pagination-clickable="true"  
+            delay="3000"
+            effect="cube"
+            >
+                <swiper-slide>
+                    <img style="border-radius: 20px;" src="{{provinceDbListForSwipe && provinceDbListForSwipe?.[0].imgUrl}}">
+                </swiper-slide>
+                <swiper-slide>
+                    <img style="border-radius: 20px;" src="{{provinceDbListForSwipe && provinceDbListForSwipe?.[1].imgUrl}}">
+                </swiper-slide>
+                <swiper-slide>
+                    <img style="border-radius: 20px;" src="{{provinceDbListForSwipe && provinceDbListForSwipe?.[2].imgUrl}}">
+                </swiper-slide>
+                <swiper-slide>
+                    <img style="border-radius: 20px;" src="{{provinceDbListForSwipe && provinceDbListForSwipe?.[3].imgUrl}}">
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </div>
+    </div>
+</div>
+
+<form class="form" [formGroup]="searchForm" style="padding-left: 30px; padding-right: 30px; padding-top: 10px;">
+    <input style="font-weight: bold; font-size: 20px; background-color: rgb(255, 255, 255); border-style: double;
+    " type="text" placeholder="Filter by city." formControlName="search" #searchQuery>
+    <button mat-flat-button color="accent" class="goBtn" (click)="goCityList(searchQuery.value)"><i class="fa fa-search"></i></button>
+    <div class="results" style="padding-bottom: 30px;">   
+        <ng-container *ngIf="provinceDbList.length;">
+            <app-provinces *ngFor="let province of provinceDbList" [provinceDetails]="province">
+
+            </app-provinces>
+        </ng-container>
+    </div>
+</form>

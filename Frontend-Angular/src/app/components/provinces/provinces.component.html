@@ -1,0 +1,8 @@
+<section class="listing">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <img class="listing-photo" src="{{provinceDetails.imgUrl}}" style="font-weight: bold;" alt="Photo of {{provinceDetails.name}}"> 
+    <section class="listing-btn">
+        <button mat-flat-button class="goBtn" color="accent" (click)="goDetails()">{{provinceDetails.name}}<i class="fa-solid fa-circle-info"></i></button>
+    </section>
+</section>
+<router-outlet></router-outlet>

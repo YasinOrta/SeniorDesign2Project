@@ -1,0 +1,82 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-haeding">
+                        <h3 class="pt-3 font-weight-bold" style="text-align: center;">Province Information Edit Panel</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="updateProvinceForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['Id'].dirty && updateProvinceForm.hasError('required','Id')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="Id" type="text" placeholder="Id">
+                                </div>
+                            </div>
+                            <small *ngIf="updateProvinceForm.controls['Id'].dirty && updateProvinceForm.hasError('required','Id')" class="text-danger">
+                                *Id is required!
+                            </small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['name'].dirty && updateProvinceForm.hasError('required','name')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="name" type="text" placeholder="Province Name">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['vehicle_Registration_Plate'].dirty && updateProvinceForm.hasError('required','vehicle_Registration_Plate')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="vehicle_Registration_Plate" type="text" placeholder="Plate No">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['region_Location'].dirty && updateProvinceForm.hasError('required','region_Location')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="region_Location" type="text" placeholder="Region">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['popularFoods'].dirty && updateProvinceForm.hasError('required','popularFoods')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="popularFoods" type="text" placeholder="Popular Foods">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['popularProducedItems'].dirty && updateProvinceForm.hasError('required','popularProducedItems')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="popularProducedItems" type="text" placeholder="Popular Produced Items">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['population'].dirty && updateProvinceForm.hasError('required','population')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="population" type="text" placeholder="Population Size">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['isCapitalCity'].dirty && updateProvinceForm.hasError('required','isCapitalCity')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="isCapitalCity" type="text" placeholder="Is this province a Capital City?">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['imgUrl'].dirty && updateProvinceForm.hasError('required','imgUrl')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="imgUrl" type="text" placeholder="Provide Image Url">
+                                </div>
+                            </div>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="updateProvinceForm.controls['about'].dirty && updateProvinceForm.hasError('required','about')">
+                                    <span class="fa fa-user pt-2" style="padding-bottom: 7px;"></span>
+                                    <input formControlName="about" type="text" placeholder="Provide Description">
+                                </div>
+                            </div>
+                            <button (click)="updateProvince()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Update Province</button>
+                            <button (click)="goBack()" class="btn btn-primary btn-block mt-4 w-100">Close Screen</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<mat-toolbar>
+    <span style="padding-right: 10px;">PATHFINDER</span>
+
+    <div class="spacer">
+        <button class="goBtn" color="accent" mat-flat-button (click)="goUserPage()">City Catalog</button>
+    </div>
+    
+    <button class="goBtn" color="accent" mat-flat-button (click)="goAdminPanel()"> Admin Panel</button>
+    <button class="goBackBtn" mat-flat-button color="accent" class="goBtn" (click)="goHome()" >Home</button>
+    <button class="goBackBtn" mat-flat-button color="warn"  class="goBtn" (click)="signOut()"> Sign Out </button>
+
+</mat-toolbar>
+
+<section >
+    <router-outlet ></router-outlet>
+</section>
